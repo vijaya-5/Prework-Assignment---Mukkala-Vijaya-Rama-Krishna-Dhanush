@@ -1,0 +1,100 @@
+Pre-work Assignment
+
+/*Question 1 : First Letter Printer
+You are provided with a string.
+Your task is to create a string with the first letter of every word in the string.
+Sample Test Case
+Input:
+great learning
+Output:
+gl*/
+
+import java.util.Scanner;
+class FirstLetterPrinter {
+public static void main (String[] args) {
+ Scanner in = new Scanner(System.in);
+ String input = in.nextLine();
+System.out.println(firstLetterPrinter(input));
+}
+static String firstLetterPrinter(String str) {
+ // write your code here
+  String flp="";
+  flp = flp + str.charAt(0);
+  for (int i=1; i<str.length(); i++){
+      if (str.charAt(i) == ' '){
+          int f = i+1;
+        flp = flp +str.charAt(f);}
+  }
+    return flp;
+ }
+ }
+
+
+
+
+/* Code-2
+Question 2: Find Missing Number
+You are provided with an array of the size n-1. It contains distinct integers in the range of 1 to n.
+Your task is to find the missing number.
+Input format:
+Line 1 will take the value of n.
+Line 2 will take the array's contents where numbers will be in the 1-n range.
+Sample Test case:
+5
+1 2 3 4
+Output:
+5
+*/
+
+import java.util.Scanner;
+class MissingNumberFinder {
+ public static void main(String[] args) {
+ Scanner in = new Scanner(System.in);
+ int size = in .nextInt();
+ int[] arr = new int[size-1];
+ for(int i=0;i<size-1;i++)
+ arr[i] = in.nextInt();
+ System.out.println(missingNumberFinder(arr, size));
+ }
+ static int missingNumberFinder(int array[], int n) {
+ // write your code here
+ int sum= 0;
+ int h = n*(n+1)/2;
+ for (int i: array){
+    sum += i;}
+
+ return h-sum;
+ 
+ }
+ }
+ 
+ 
+ 
+
+/* Code-3:
+Question 3: Pattern Printer
+Your task is to print the following patter for a given n value.
+For n=2,
+pattern is:
+2 2 1 1
+2 1
+*/
+
+import java.util.Scanner;
+class PatternPrinter {
+ public static void main(String[] args) {
+ Scanner in = new Scanner(System.in);
+ int n = in .nextInt();
+ patternPrinter(n);
+ }
+ static void patternPrinter(int n){
+     int h = n;
+     for(int i=0;n>i;i++){
+        for(int j=n; j>=1; j--){
+            for(int k=h; k>=1;k--){
+                System.out.print(j);}
+        }
+        h=h-1;
+        System.out.println();}
+ }
+ }
